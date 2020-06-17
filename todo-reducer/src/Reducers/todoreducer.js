@@ -31,7 +31,7 @@ export const todoReducer = (state, action) => {
         completed: false,
         id: Date.now(),
       };
-      return { ...state, todos: [state.todos, newTodo] };
+      return { ...state, todos: [...state.todos, newTodo] };
     default:
       return state;
   }
