@@ -1,9 +1,12 @@
 import React from "react";
 
-const Todo = () => {
+const Todo = (props) => {
+  console.log("props of the todos", props);
+
   return (
     <div>
-      <p>This is a TodoItem</p>
+      <h3>{props.name}</h3>
+      <p>{props.status ? "Completed" : "Incomplete"} </p>
     </div>
   );
 };
