@@ -10,6 +10,10 @@ function App() {
 
   const addNewTodo = (newTodoItem) => {
     //add dispatch code here when ready
+    dispatch({
+      type: "Add_New_Todo",
+      payload: newTodoItem,
+    });
   };
 
   return (

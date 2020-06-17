@@ -1,5 +1,3 @@
-import React from "react";
-
 export const initialTodoState = {
   todos: [
     {
@@ -27,10 +25,13 @@ export const initialTodoState = {
 
 export const todoReducer = (state, action) => {
   switch (action.type) {
-    case "Todo_List":
-      return { ...state, item: !state.item };
-    case "Todo_Completed":
-      return { ...state, completed: action.payload, completed: false };
+    case "Add_New_Todo":
+      const newTodo = {
+        item: action.payload,
+        completed: false,
+        id: Date.now(),
+      };
+      return { ...state, todos: [state.todos, newTodo] };
     default:
       return state;
   }
