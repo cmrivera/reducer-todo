@@ -6,7 +6,7 @@ const Todo = (props) => {
   return (
     <div>
       <h3>{props.name}</h3>
-      <p>{props.status ? "Completed" : "Incomplete"} </p>
+      <p>{props.status ? "completed" : "Incomplete"} </p>
     </div>
   );
 };
