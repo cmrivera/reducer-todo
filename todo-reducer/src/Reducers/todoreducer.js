@@ -8,10 +8,10 @@ export const initialTodoState = {
 
 export const todoReducer = (state, action) => {
   switch (action.type) {
-    case "Todo_Complete":
-      return { ...state, completed: !state.completed };
-    case "Add_Todo":
-      return { ...state, item: action.payload, completed: false };
+    case "Todo_List":
+      return { ...state, item: !state.item };
+    case "Todo_Completed":
+      return { ...state, completed: action.payload, completed: false };
     default:
       return state;
   }
