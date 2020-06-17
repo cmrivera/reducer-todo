@@ -1,9 +1,28 @@
 import React from "react";
 
 export const initialTodoState = {
-  item: "Learn about reducers",
-  completed: false,
-  id: 3892987589,
+  todos: [
+    {
+      item: "Learn about reducers",
+      completed: false,
+      id: 1,
+    },
+    {
+      item: "Add Reducer",
+      completed: false,
+      id: 2,
+    },
+    {
+      item: "aadd todos",
+      completed: false,
+      id: 3,
+    },
+    {
+      item: "finish project",
+      completed: false,
+      id: 4,
+    },
+  ],
 };
 
 export const todoReducer = (state, action) => {
