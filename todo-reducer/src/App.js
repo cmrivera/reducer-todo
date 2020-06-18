@@ -24,7 +24,7 @@ function App() {
   };
   const filterTodos = () => {
     dispatch({
-      type: "Filtered_Completed_Todos",
+      type: "Filter_Completed_Todos",
     });
   };
 

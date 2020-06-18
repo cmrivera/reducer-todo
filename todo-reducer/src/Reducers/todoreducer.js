@@ -48,8 +48,10 @@ export const todoReducer = (state, action) => {
 
     case "Filter_Completed_Todos":
       const incompleteTodos = state.todos.filter((todo) => {
-        if (todo.completed === false) {
-          return { ...todo };
+        if (todo.item === action.payload) {
+          todo.completed = !todo.completed;
+
+          return todo;
         }
       });
       return {
