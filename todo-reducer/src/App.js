@@ -16,13 +16,14 @@ function App() {
     });
   };
 
-  const toggleTodo = (clickedTodoId) => {
+  const toggleTodo = (todo) => {
     dispatch({
       type: "Toggle_Todo_Complete",
-      payload: clickedTodoId,
+      payload: todo,
     });
   };
-  const filterTodos = () => {
+  const clearCompleteTodos = (e) => {
+    e.preventDefault();
     dispatch({
       type: "Filter_Completed_Todos",
     });
@@ -32,7 +33,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Chris Reducer Todo App</h1>
-        <TodoForm addNewTodo={addNewTodo} filterTodos={filterTodos} />
+        <TodoForm
+          addNewTodo={addNewTodo}
+          clearCompleteTodos={clearCompleteTodos}
+        />
         <TodoList todos={state.todos} toggleTodo={toggleTodo} />
       </header>
     </div>

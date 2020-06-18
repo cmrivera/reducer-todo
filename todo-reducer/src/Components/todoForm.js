@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TodoForm = ({ addNewTodo, filterTodos }) => {
+const TodoForm = ({ addNewTodo, filterTodos }, props) => {
   const [newTodoItem, setNewTodoItem] = useState("");
 
   const handleChanges = (e) => {
@@ -14,11 +14,6 @@ const TodoForm = ({ addNewTodo, filterTodos }) => {
   };
 
   console.log(newTodoItem);
-
-  const handleClearCompleted = (e) => {
-    e.preventDefault();
-    filterTodos();
-  };
 
   console.log(newTodoItem);
 
@@ -34,9 +29,7 @@ const TodoForm = ({ addNewTodo, filterTodos }) => {
           onChange={handleChanges}
         />
         <button type="Submit"> Add New Todo</button>
-        <button type="button" onClick={handleClearCompleted}>
-          Clear Completed Todo Items
-        </button>
+        <button>Clear Completed Todo Items</button>
       </form>
     </div>
   );

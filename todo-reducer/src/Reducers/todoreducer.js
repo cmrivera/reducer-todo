@@ -34,30 +34,26 @@ export const todoReducer = (state, action) => {
       return { ...state, todos: [...state.todos, newTodo] };
 
     case "Toggle_Todo_Complete":
-      const updatedTodos = state.todos.map((todo) => {
-        if (todo.id === action.payload) {
-          return { ...todo, completed: !todo.completed };
-        } else {
-          return todo;
-        }
-      });
       return {
         ...state,
-        todos: updatedTodos,
+        todos: state.todos.map((todo) => {
+          if (todo.id === action.payload) {
+            return {
+              ...todo,
+              completed: !todo.completed,
+            };
+          }
+          return {
+            ...todo,
+          };
+        }),
       };
-
     case "Filter_Completed_Todos":
-      const incompleteTodos = state.todos.filter((todo) => {
-        if (todo.item === action.payload) {
-          todo.completed = !todo.completed;
-
-          return todo;
-        }
-      });
       return {
         ...state,
-        todos: incompleteTodos,
+        todos: state.todos.filter((todo) => !todo.completed),
       };
+
     default:
       return state;
   }
